@@ -3,16 +3,15 @@ const flash = require('connect-flash')
 const session = require('express-session')
 const app = express()
 
-const passport = require('passport')
-
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config()
+  require('dotenv').config()
 }
 
 const { engine } = require('express-handlebars')
 const methodOverride = require('method-override')
 
 const router = require('./routes')
+const passport = require('./config/passport')
 
 const messageHandler = require('./middlewares/message-handler')
 const errorHandler = require('./middlewares/error-handler')
